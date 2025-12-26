@@ -1,0 +1,108 @@
+{
+  "info": {
+    "name": "Event Management APIs",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+
+    {
+      "name": "Create Event",
+      "request": {
+        "method": "POST",
+        "url": "http://localhost:8080/event/create",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Beach Cleanup\",\n  \"description\": \"Clean the beach\",\n  \"address\": \"RK Beach\",\n  \"city\": \"Vizag\",\n  \"startDate\": \"2025-12-20T10:00:00\",\n  \"endDate\": \"2025-12-20T16:00:00\",\n  \"maximumAllowedRegistrations\": 50,\n  \"organizer\": \"NGO\",\n  \"registrationAllowed\": true\n}"
+        }
+      }
+    },
+
+    {
+      "name": "Update Event",
+      "request": {
+        "method": "PUT",
+        "url": "http://localhost:8080/event/update",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"eventId\": 1,\n  \"name\": \"Beach Cleanup Updated\",\n  \"description\": \"Updated desc\",\n  \"address\": \"RK Beach\",\n  \"city\": \"Vizag\",\n  \"startDate\": \"2025-12-21T10:00:00\",\n  \"endDate\": \"2025-12-21T16:00:00\",\n  \"maximumAllowedRegistrations\": 60,\n  \"organizer\": \"NGO\",\n  \"registrationAllowed\": true\n}"
+        }
+      }
+    },
+
+    {
+      "name": "Delete Event",
+      "request": {
+        "method": "DELETE",
+        "url": "http://localhost:8080/event/delete/1"
+      }
+    },
+
+    {
+      "name": "Register",
+      "request": {
+        "method": "POST",
+        "url": "http://localhost:8080/event/register",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"eventId\": 1,\n  \"emailId\": \"user@gmail.com\"\n}"
+        }
+      }
+    },
+
+    {
+      "name": "Unregister",
+      "request": {
+        "method": "POST",
+        "url": "http://localhost:8080/event/unregister",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"eventId\": 1,\n  \"emailId\": \"user@gmail.com\"\n}"
+        }
+      }
+    },
+
+    {
+      "name": "List By Status",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/event/list/true"
+      }
+    },
+
+    {
+      "name": "Get Event By ID",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/event/list/1"
+      }
+    },
+
+    {
+      "name": "Registrations",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/event/1/registrations"
+      }
+    },
+
+    {
+      "name": "Check In",
+      "request": {
+        "method": "POST",
+        "url": "http://localhost:8080/event/check-in",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"eventId\": 1,\n  \"emailId\": \"user@gmail.com\"\n}"
+        }
+      }
+    },
+
+    {
+      "name": "Participants",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/event/1/participants"
+      }
+    }
+  ]
+}
